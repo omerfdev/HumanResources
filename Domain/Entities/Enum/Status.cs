@@ -10,6 +10,9 @@ namespace Domain.Entities.Enum
     {
         Active,
         Passive,
-        Modified
+        Modified,
+        Success,
+        Decline,
+        Pending
     }
 }

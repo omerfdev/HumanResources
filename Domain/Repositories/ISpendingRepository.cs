@@ -1,5 +1,4 @@
-﻿
-using Domain.Entities.Concrete;
+﻿using Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Repositories
 {
-    public interface ICompanyRepository : IBaseRepository<Company>
+    public interface ISpendingRepository : IBaseRepository<Spending>
     {
+
     }
 }

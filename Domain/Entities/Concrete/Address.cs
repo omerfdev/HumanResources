@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Entities.Abstract;
+using Domain.Entities.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Concrete
 {
-    public class Address
+    public class Address:IBase
     {
         public int AddressId { get; set; }
         public string City { get; set; }
@@ -16,6 +18,7 @@ namespace Domain.Entities.Concrete
         public int PostalCode { get; set; }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
+        public Status Status { get; set; }
 
         public override string ToString()
         {

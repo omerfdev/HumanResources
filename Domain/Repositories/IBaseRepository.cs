@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Domain.Entities.Abstract;
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace Domain.Repositories
 {
-    public interface IBaseRepository<T> where T : IBaseEntity
+    public interface IBaseRepository<T> where T : IBase
     {
         Task AddAsync(T entity);
         Task<int> UpdateAsync(T entity);
