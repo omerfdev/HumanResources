@@ -1,23 +1,19 @@
-﻿using HrELP.Domain.Entities.Concrete;
-using HrELP.Infrastructure.EntityTypeConfiguration;
+﻿
+
+using Domain.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HrELP.Infrastructure
 {
-    public class HrElpContext : IdentityDbContext<AppUser, AppRole, int>
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
-        public HrElpContext()
+        public Context()
         {
 
         }
-        public HrElpContext(DbContextOptions<HrElpContext> options) : base(options)
+        public Context(DbContextOptions<Context> options) : base(options)
         {
 
         }

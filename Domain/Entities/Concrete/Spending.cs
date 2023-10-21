@@ -1,6 +1,5 @@
 ﻿using Domain.Entities.Abstract;
 using Domain.Entities.Enum;
-using Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;

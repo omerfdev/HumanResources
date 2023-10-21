@@ -1,5 +1,6 @@
-﻿using HrELP.Domain.Entities.Concrete;
-using HrELP.Domain.Repositories;
+﻿
+using Domain.Entities.Concrete;
+using Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace HrELP.Infrastructure.Repositories
 {
     public class SpendingRepository : BaseRepository<Spending>, ISpendingRepository
     {
-        public SpendingRepository(HrElpContext context) : base(context)
+        public SpendingRepository(Context context) : base(context)
         {
 
         }

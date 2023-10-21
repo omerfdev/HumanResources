@@ -10,7 +10,7 @@ namespace HrELP.Infrastructure.Repositories
 {
     public class AppUserRepository: BaseRepository<AppUser>, IAppUserRepository
     {
-        public AppUserRepository(HrElpContext context) : base(context)
+        public AppUserRepository(Context context) : base(context)
         {
 
         }

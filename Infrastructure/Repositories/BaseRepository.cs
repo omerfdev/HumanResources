@@ -1,7 +1,4 @@
-﻿using HrELP.Domain.Entities.Abstract;
-using HrELP.Domain.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace HrELP.Infrastructure.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : class, IBaseEntity
+    public class BaseRepository<T> : IBaseRepository<T> where T : class, IBase
     {
-        private readonly HrElpContext _context;
+        private readonly Context _context;
         protected DbSet<T> _table;
 
-        public BaseRepository(HrElpContext context)
+        public BaseRepository(Context context)
         {
             _context = context;
             _table = context.Set<T>();

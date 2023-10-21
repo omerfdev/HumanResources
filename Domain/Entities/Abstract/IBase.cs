@@ -9,6 +9,7 @@ namespace Domain.Entities.Abstract
 {
     public interface IBase
     {
+        public bool IsActive { get; set; }
         public Status Status { get; set; }
     }
 }

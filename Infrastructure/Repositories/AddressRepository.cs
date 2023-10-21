@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Concrete;
+using Domain.Repositories;
 using HrELP.Infrastructure;
 using HrELP.Infrastructure.Repositories;
 using System;
