@@ -1,4 +1,7 @@
 ﻿
+using Domain.Entities.Abstract;
+using Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
