@@ -17,6 +17,9 @@ namespace Domain.Entities.Concrete
         public string Surname { get; set; }
         public string SecondSurname { get; set; }
         public string CitizenId { get; set; }
+        public string Photo { get; set; }
+        public string Profession { get; set; }
+        public int DepartmentId { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime DismissalDate { get; set; }
@@ -27,5 +30,11 @@ namespace Domain.Entities.Concrete
         public Company Company { get; set; }
         public decimal Salary { get; set; }
         public Status Status { get; set; }
+        public bool IsActive { get ; set ; }
+        public DateTime? CreateTime { get ; set ; }
+        public DateTime? ModifiedTime { get; set ; }
+        public DateTime? DeleteTime { get ; set ; }
+        public DateTime? ReplyTime { get ; set ; }
+        public DateTime? RequestTime { get; set ; }
     }
 }

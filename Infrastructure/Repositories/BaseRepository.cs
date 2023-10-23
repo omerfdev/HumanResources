@@ -42,5 +42,7 @@ namespace HrELP.Infrastructure.Repositories
         {
             return await _table.FirstOrDefaultAsync(predicate);
         }
+
+        
     }
 }

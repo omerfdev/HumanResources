@@ -9,9 +9,11 @@ namespace Domain.Repositories
     {
         Task AddAsync(T entity);
         Task<int> UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task DeleteAsync(int id);
         Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
-        
+        Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate);
+        Task<T> GetByIdAsync(int id);
+        IQueryable<T> GetAll();
 
     }
 }
