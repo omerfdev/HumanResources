@@ -19,10 +19,10 @@ namespace Domain.Entities.Concrete
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
         public Status Status { get; set; }
+        public bool IsActive { get; set; }
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
-        public DateTime? DeleteTime { get; set; }
-        public bool IsActive { get ; set ; }
+        public DateTime? DeleteTime { get; set; }      
         public DateTime? ReplyTime { get ; set ; }
         public DateTime? RequestTime { get ; set ; }
 

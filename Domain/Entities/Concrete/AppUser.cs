@@ -19,10 +19,10 @@ namespace Domain.Entities.Concrete
         public string CitizenId { get; set; }
         public string Photo { get; set; }
         public string Profession { get; set; }      
-        public DateTime BirthDate { get; set; }
-        public DateTime HireDate { get; set; }
-        public DateTime DismissalDate { get; set; }
+        public Gender Gender { get; set; }             
         public string BirthPlace { get; set; }
+        public byte NumberOfDayOff { get; set; }
+        public byte RemainingNumberOfDayOff { get; set; }
         public int AppRoleId { get; set; }        
         public int AddressId { get; set; }
         public Address Address { get; set; }
@@ -31,13 +31,38 @@ namespace Domain.Entities.Concrete
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
         public ICollection<Spending>? Spendings { get; set; }
+        public ICollection<DayOffAppUser>? DayOffAppUser { get; set; }
         public decimal Salary { get; set; }
         public Status Status { get; set; }
         public bool IsActive { get ; set ; }
+        public DateTime BirthDate { get; set; }
+        public DateTime HireDate { get; set; }
+        public DateTime DismissalDate { get; set; }
         public DateTime? CreateTime { get ; set ; }
         public DateTime? ModifiedTime { get; set ; }
         public DateTime? DeleteTime { get ; set ; }
         public DateTime? ReplyTime { get ; set ; }
         public DateTime? RequestTime { get; set ; }
+
+        public AppUser()
+        {
+            int currentYear = DateTime.Now.Year;
+            int hireYear = HireDate.Year;
+            int yearsOfWork = currentYear - hireYear;
+
+            if (yearsOfWork >= 0 && yearsOfWork <= 6)
+            {
+                NumberOfDayOff = 14;
+            }
+            else if (yearsOfWork > 6)
+            {
+                NumberOfDayOff = 20;
+            }
+            else
+            {
+
+                NumberOfDayOff = 0;
+            }
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-using Domain.Entities.Concrete;
+﻿using Domain.Entities.Concrete;
 using Infrastructure.EntityTypeConfiguration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -24,6 +22,13 @@ namespace HrELP.Infrastructure
         public DbSet<Address>? Addresses { get; set; }
         public DbSet<Company>? Companies { get; set; }
         public DbSet<Spending>? Spendings { get; set; }
+        public DbSet<SpendingType>? SpendingsType { get; set; }
+        public DbSet<CompanyDepartment>? CompanyDepartments { get; set; }
+        public DbSet<Currency>? Currencys { get; set; }
+        public DbSet<DayOff>? DayOffs { get; set; }
+        public DbSet<DayOffType>? DayOffTypes { get; set; }
+        public DbSet<DayOffAppUser>? DayOffAppUsers { get; set; }
+        public DbSet<Department>? Departments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -40,8 +45,15 @@ namespace HrELP.Infrastructure
             builder.ApplyConfiguration<Address>(new AddressCFG());
             builder.ApplyConfiguration<Company>(new CompanyCFG());
             builder.ApplyConfiguration<Spending>(new SpendingCFG());
+            builder.ApplyConfiguration<SpendingType>(new SpendingTypeCFG());
+            builder.ApplyConfiguration<CompanyDepartment>(new CompanyDepartmentCFG());
+            builder.ApplyConfiguration<Department>(new DepartmentCFG());
+            builder.ApplyConfiguration<Currency>(new CurrencyCFG());
+            builder.ApplyConfiguration<DayOff>(new DayOffCFG());
+            builder.ApplyConfiguration<DayOffType>(new DayOffTypeCFG());
+            builder.ApplyConfiguration<DayOffAppUser>(new DayOffAppUserCFG());
 
-            builder.Entity<IdentityUserRole<int>>().HasData(new IdentityUserRole<int> { RoleId = 1, UserId = 1 });
+            
 
             base.OnModelCreating(builder);
         }

@@ -15,12 +15,12 @@ namespace Domain.Entities.Concrete
         public int CompanyDepartmentId { get; set; }
         public int CompanyId { get; set; }
         public int DepartmentId { get; set; }
-        public bool IsActive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Status Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? CreateTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? ModifiedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? DeleteTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? ReplyTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? RequestTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsActive { get ; set; }
+        public Status Status { get ; set ; }
+        public DateTime? CreateTime { get ; set ; }
+        public DateTime? ModifiedTime { get; set ; }
+        public DateTime? DeleteTime { get; set; }
+        public DateTime? ReplyTime { get ; set ; }
+        public DateTime? RequestTime { get ; set; }
     }
 }
