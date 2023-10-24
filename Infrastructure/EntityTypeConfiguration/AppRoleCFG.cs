@@ -15,8 +15,8 @@ namespace Infrastructure.EntityTypeConfiguration
         {
 
             builder.HasData(
-               new AppRole { Id = 1, Name = "Manager", NormalizedName = "MANAGER" },
-               new AppRole { Id = 2, Name = "Admin", NormalizedName = "ADMIN" },
+               new AppRole { Id = 1, Name = "Admin", NormalizedName = "ADMIN" },
+               new AppRole { Id = 2, Name = "Manager", NormalizedName = "MANAGER" },
                new AppRole { Id = 3, Name = "Employee", NormalizedName = "EMPLOYEE" }
            );
 

@@ -18,16 +18,19 @@ namespace Domain.Entities.Concrete
         public string SecondSurname { get; set; }
         public string CitizenId { get; set; }
         public string Photo { get; set; }
-        public string Profession { get; set; }
-        public int DepartmentId { get; set; }
+        public string Profession { get; set; }      
         public DateTime BirthDate { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime DismissalDate { get; set; }
         public string BirthPlace { get; set; }
+        public int AppRoleId { get; set; }        
         public int AddressId { get; set; }
         public Address Address { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }
+        public Department Department { get; set; }
+        public int DepartmentId { get; set; }
+        public ICollection<Spending>? Spendings { get; set; }
         public decimal Salary { get; set; }
         public Status Status { get; set; }
         public bool IsActive { get ; set ; }

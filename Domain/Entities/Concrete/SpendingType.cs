@@ -11,8 +11,8 @@ namespace Domain.Entities.Concrete
 {
     public class SpendingType:IBase
     {
-        public int SpendingId { get; set; }
-        public string SpendinggName { get; set; }
+        public int SpendingTypeId { get; set; }
+        public string SpendingName { get; set; }
         public decimal MinAmount { get; set; }
         public decimal MaxAmount { get; set; }
         public ICollection<Spending>? Spending { get; set; }

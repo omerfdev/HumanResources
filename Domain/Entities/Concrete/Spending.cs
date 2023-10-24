@@ -15,12 +15,13 @@ namespace Domain.Entities.Concrete
         public AppUser Employee { get; set; }
         public int EmployeeId { get; set; }
         public Currency Currency { get; set; }
-        public string CurrencyCode { get; set; }
+        public int CurrencyId { get; set; }
         public SpendingType SpendingType { get; set; }
-        public string SpendingTypeId { get; set; }
+        public int SpendingTypeId { get; set; }
         public decimal AmountOfSpending { get; set; }
         public decimal TaxAmount { get; set; }
         public decimal TotalSpending { get; set; }
+        public string DocumentPath { get; set; }        
         public Status Status { get; set; } = Status.Pending;
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }

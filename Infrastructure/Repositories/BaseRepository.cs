@@ -22,6 +22,7 @@ namespace HrELP.Infrastructure.Repositories
             _table = context.Set<T>();
 
         }
+       
         public async Task AddAsync(T entity)
         {
             await _table.AddAsync(entity);
@@ -42,7 +43,20 @@ namespace HrELP.Infrastructure.Repositories
         {
             return await _table.FirstOrDefaultAsync(predicate);
         }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _table.FindAsync(id);
+        }
 
-        
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _table.Where(predicate).ToListAsync();
+        }
+        public IQueryable<T> GetAll()
+        {
+            return _table.AsQueryable();
+        }
+
+
     }
 }

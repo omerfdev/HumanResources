@@ -15,6 +15,7 @@ namespace Domain.Entities.Concrete
         public decimal Budget { get; set; }
         public int ManagerId { get; set; }
         public AppUser Manager { get; set; }
+        public AppUser Employee { get; set; }
         public ICollection<AppUser> Employees { get; set; }
         public ICollection<Department> Departments { get; set; }
         public Status Status { get; set; }

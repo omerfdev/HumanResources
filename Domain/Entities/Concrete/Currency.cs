@@ -13,9 +13,10 @@ namespace Domain.Entities.Concrete
     public class Currency : IBase
     {
         [Key]
+        public int CurrencyId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public string ExchangeRate { get; set; }
+        public byte ExchangeRate { get; set; }
         public ICollection<Spending> Spending { get; set; }
         public bool IsActive { get; set ; }
         public Status Status { get ; set ; }

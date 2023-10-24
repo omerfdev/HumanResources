@@ -14,12 +14,13 @@ namespace Infrastructure.EntityTypeConfiguration
     {
         public override void Configure(EntityTypeBuilder<AppUser> builder)
         {
-           builder.Property(x=>x.FirstName).IsRequired().HasMaxLength(50).HasColumnType("varchar");
-           builder.Property(x=>x.SecondName).IsRequired(false).HasMaxLength(50).HasColumnType("varchar");           
-           builder.Property(x=>x.Surname).IsRequired().HasMaxLength(50).HasColumnType("varchar");
-           builder.Property(x=>x.SecondSurname).IsRequired(false).HasMaxLength(50).HasColumnType("varchar");
+            builder.Property(x => x.FirstName).IsRequired().HasMaxLength(50).HasColumnType("varchar");
+            builder.Property(x => x.SecondName).IsRequired(false).HasMaxLength(50).HasColumnType("varchar");
+            builder.Property(x => x.Surname).IsRequired().HasMaxLength(50).HasColumnType("varchar");
+            builder.Property(x => x.SecondSurname).IsRequired(false).HasMaxLength(50).HasColumnType("varchar");
             builder.Property(x => x.Photo).IsRequired(false);
             builder.Property(x => x.CitizenId).IsRequired().HasMaxLength(11).HasColumnType("varchar");
+            builder.Property(x => x.AppRoleId).IsRequired();
             builder.Property(x => x.BirthDate).IsRequired();
             builder.Property(x => x.BirthPlace).IsRequired(false).HasMaxLength(30).HasColumnType("varchar");
             builder.HasOne(x => x.Address).WithOne(x => x.AppUser).HasForeignKey<Address>(x => x.AppUserId);
@@ -29,6 +30,7 @@ namespace Infrastructure.EntityTypeConfiguration
             AppUser root = new AppUser()
             {
                 Id = 1,
+                AppRoleId = 1,
                 FirstName = "Gamze",
                 Surname = "Altınelli",
                 SecurityStamp = Guid.NewGuid().ToString(),
@@ -41,11 +43,13 @@ namespace Infrastructure.EntityTypeConfiguration
                 Profession = "Computer Engineer",
                 DepartmentId = 1,
                 AddressId = 1,
+                
                 Salary = 30000M
             };
             AppUser employee = new AppUser()
             {
                 Id = 2,
+                AppRoleId = 2,
                 FirstName = "Omer Faruk",
                 Surname = "ALMALI",
                 SecurityStamp = Guid.NewGuid().ToString(),
@@ -56,13 +60,14 @@ namespace Infrastructure.EntityTypeConfiguration
                 BirthPlace = "Istanbul",
                 CompanyId = 1,
                 Profession = "Computer Engineer",
-                DepartmentId =1,
+                DepartmentId = 1,
                 AddressId = 1,
                 Salary = 30000M
             };
             AppUser employee2 = new AppUser()
             {
                 Id = 3,
+                AppRoleId = 3,
                 FirstName = "Sabri",
                 Surname = "SEN",
                 SecurityStamp = Guid.NewGuid().ToString(),

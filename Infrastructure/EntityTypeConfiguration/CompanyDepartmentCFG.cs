@@ -13,8 +13,27 @@ namespace Infrastructure.EntityTypeConfiguration
 
         public override void Configure(EntityTypeBuilder<CompanyDepartment> builder)
         {
-
-
+          
+            builder.HasData(new CompanyDepartment()
+            {
+                CompanyDepartmentId=1,
+                CompanyId = 1,        
+                DepartmentId = 1,
+                IsActive = true
+            }, new CompanyDepartment()
+            {
+                CompanyDepartmentId = 2,
+                CompanyId = 1,
+                DepartmentId = 2,
+                IsActive = true
+            }, new CompanyDepartment()
+            {
+                CompanyDepartmentId = 3,
+                CompanyId = 1,
+                DepartmentId = 3,
+                IsActive = true
+            }
+            );
             base.Configure(builder);
         }
 
