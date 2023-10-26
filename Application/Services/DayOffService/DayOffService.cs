@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.DayOffService
 {
-    public class DayOffService
+    public class DayOffService:IDayOffService
     {
     }
 }

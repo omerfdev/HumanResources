@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Services.SpendingService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.SpendingTypeService
 {
-    public class SpendingTypeService
+    public class SpendingTypeService:ISpendingTypeService
     {
     }
 }

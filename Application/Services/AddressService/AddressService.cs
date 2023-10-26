@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.AddressService
 {
-    public class AddressService
+    public class AddressService:IAddressService
     {
     }
 }

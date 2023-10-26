@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.EmailService
 {
-    public class EmailService
+    public class EmailService:IEmailService
     {
     }
 }

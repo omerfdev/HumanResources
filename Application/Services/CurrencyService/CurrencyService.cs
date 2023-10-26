@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.CurrencyService
 {
-    public class CurrencyService
+    public class CurrencyService:ICurrencyService
     {
     }
 }
