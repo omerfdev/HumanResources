@@ -23,6 +23,11 @@ namespace Infrastructure.EntityTypeConfiguration
                 CompanyId = 2,
                 CompanyName = "X Company",
                 IsActive = true
+            }, new Company()
+            {
+                CompanyId = 3,
+                CompanyName = "Z Company",
+                IsActive = true
             });
             base.Configure(builder);
         }
