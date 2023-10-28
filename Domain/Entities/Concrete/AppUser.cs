@@ -35,9 +35,9 @@ namespace Domain.Entities.Concrete
         public decimal Salary { get; set; }
         public Status Status { get; set; }
         public bool IsActive { get ; set ; }
-        public DateTime BirthDate { get; set; }
-        public DateTime HireDate { get; set; }
-        public DateTime DismissalDate { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public DateTime? HireDate { get; set; }
+        public DateTime? DismissalDate { get; set; }
         public DateTime? CreateTime { get ; set ; }
         public DateTime? ModifiedTime { get; set ; }
         public DateTime? DeleteTime { get ; set ; }
