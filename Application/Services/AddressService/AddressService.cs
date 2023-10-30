@@ -9,7 +9,7 @@ namespace Application.Services.AddressService
 {
     public class AddressService : IAddressService
     {
-        public Task<Address> GetAddressAsync()
+        public Task<Address> GetUserAddressAsync()
         {
             throw new NotImplementedException();
         }

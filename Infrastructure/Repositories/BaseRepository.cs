@@ -23,14 +23,19 @@ namespace HrELP.Infrastructure.Repositories
 
         }
        
-        public async Task AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
+            _context.Entry<T>(entity).State = EntityState.Added;
+            entity.ModifiedTime = DateTime.Now;
             await _table.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
-        public async Task DeleteAsync(T entity)
+        public async Task<int> DeleteAsync(T entity)
         {
-            await _context.SaveChangesAsync();
+            _context.Entry<T>(entity).State = EntityState.Deleted;
+            entity.IsActive = false;
+            _table.Remove(entity);
+           return await _context.SaveChangesAsync();
         }
 
         public async Task<int> UpdateAsync(T entity)
@@ -56,7 +61,41 @@ namespace HrELP.Infrastructure.Repositories
         {
             return _table.AsQueryable();
         }
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
+        {
+            var query = _table.AsQueryable();
+            // Include işlemleri
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
 
+            var result = await query.Where(predicate).ToListAsync();
+            return result;
+        }
 
+        public async Task<int> DeactivateAsync(int id)
+        {
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                _context.Entry<T>(entity).State = EntityState.Modified;
+                entity.ModifiedTime = DateTime.Now;
+                entity.IsActive = false;              
+            }
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> ActivateAsync(int id)
+        {
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                _context.Entry<T>(entity).State = EntityState.Modified;
+                entity.ModifiedTime = DateTime.Now;
+                entity.IsActive = true;               
+            }
+            return await _context.SaveChangesAsync();
+        }
     }
 }

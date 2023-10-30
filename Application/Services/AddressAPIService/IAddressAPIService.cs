@@ -8,7 +8,7 @@ namespace Application.Services.AddressAPIService
 {
     public interface IAddressAPIService
     {
-        Task<List<string>> GetAllData(string action);
+        Task<List<string>> GetAllAddressData(string action);
         Task<List<string>> GetCityAsync();
         Task<List<string>> GetTownAsync(string city);
         Task<List<string>> GetDistrictAsync(string city,string town);

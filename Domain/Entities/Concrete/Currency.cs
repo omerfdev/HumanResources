@@ -16,7 +16,7 @@ namespace Domain.Entities.Concrete
         public int CurrencyId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public byte ExchangeRate { get; set; }
+        public decimal ExchangeRate { get; set; }
         public ICollection<Spending> Spending { get; set; }
         public bool IsActive { get; set ; }
         public Status Status { get ; set ; }

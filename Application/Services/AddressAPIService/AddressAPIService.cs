@@ -8,10 +8,10 @@ namespace Application.Services.AddressAPIService
 {
     public class AddressAPIService : IAddressAPIService
     {
-        public Task<List<string>> GetAllData(string action)
+        public Task<List<string>> GetAllAddressData(string action)
         {
             throw new NotImplementedException();
-        }
+        }      
 
         public Task<List<string>> GetCityAsync()
         {

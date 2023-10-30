@@ -32,8 +32,8 @@ namespace HrELP.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:hrelp-server.database.windows.net,1433;Initial Catalog=hrelpDB;Persist Security Info=False;User ID=hrelp;Password=Admin_123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;");
-
+            //optionsBuilder.UseSqlServer("Server=tcp:hrelp-server.database.windows.net,1433;Initial Catalog=hrelpDB;Persist Security Info=False;User ID=hrelp;Password=Admin_123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;");
+            optionsBuilder.UseSqlServer("Data Source=ALMALI\\OMERFDEV;Initial Catalog=HR_DB;User ID=sa;pwd=Omer34;");
 
             base.OnConfiguring(optionsBuilder);
         }

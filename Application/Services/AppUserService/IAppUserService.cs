@@ -23,7 +23,8 @@ namespace Application.Services.AppUserService
         Task<List<AppUser>> GetAllUsersByCompanyIdAsync(int companyId);
         Task<List<AppUser>> GetAllUsersByEmailAsync(string email);
         Task<int> AddEmployeeAsync(AddEmployeeDTO addemployeeDTO);
-        Task<int> UpdateEmployeeAsync(UpdateEmployeeDTO updateemployeeDTO);
+        Task<int> UpdateEmployeeAsync(UpdateEmployeeDTO updateemployeeDTO);      
+
 
     }
 }

@@ -18,6 +18,8 @@ namespace Domain.Entities.Concrete
         public int PostalCode { get; set; }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
+        public int? CompanyID { get; set; }
+        public Company? Company { get; set; }
         public Status Status { get; set; }
         public bool IsActive { get; set; }
         public DateTime? CreateTime { get; set; }
