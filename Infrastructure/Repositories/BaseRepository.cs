@@ -97,5 +97,10 @@ namespace HrELP.Infrastructure.Repositories
             }
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<T> GetByNameAsync(string name)
+        {
+            return await _table.FindAsync(name);
+        }
     }
 }

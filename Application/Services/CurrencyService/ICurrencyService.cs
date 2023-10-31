@@ -9,6 +9,8 @@ namespace Application.Services.CurrencyService
 {
     public interface ICurrencyService
     {
-        Task<Currency> GetCurrencyAsync(int currencyId);
+        Task CreateCurrencyAsync(Currency currency);
+        Task<List<Currency>> GetAllCurrencyAsync();
+        Task<Currency> GetCurrencyAsync(string currencyName);
     }
 }

@@ -17,6 +17,7 @@ namespace Domain.Repositories
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes);
         Task<int> DeactivateAsync(int id);
         Task<int> ActivateAsync(int id);
+        Task<T> GetByNameAsync(string name);
     }
 }
 
