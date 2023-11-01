@@ -23,6 +23,7 @@ namespace Domain.Entities.Concrete
         public string BirthPlace { get; set; }
         public byte NumberOfDayOff { get; set; }
         public byte RemainingNumberOfDayOff { get; set; }
+        public bool MarriageStatus { get; set; }
         public int AppRoleId { get; set; }        
         public int AddressId { get; set; }
         public Address Address { get; set; }
@@ -47,7 +48,7 @@ namespace Domain.Entities.Concrete
         public AppUser()
         {
             int currentYear = DateTime.Now.Year;
-            int hireYear = HireDate.Year;
+            int hireYear = HireDate.Value.Year;
             int yearsOfWork = currentYear - hireYear;
 
             if (yearsOfWork >= 0 && yearsOfWork <= 6)

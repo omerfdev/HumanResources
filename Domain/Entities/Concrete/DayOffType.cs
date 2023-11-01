@@ -15,6 +15,7 @@ namespace Domain.Entities.Concrete
         public byte DayOffTypeDuration { get; set; }
         public bool IsActive { get; set; }
         public Status Status { get ; set ; }
+        public Gender Gender { get; set; }
         public DateTime? CreateTime { get ; set; }
         public DateTime? ModifiedTime { get; set; }
         public DateTime? DeleteTime { get ; set ; }
