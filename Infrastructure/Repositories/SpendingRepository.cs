@@ -15,5 +15,10 @@ namespace HrELP.Infrastructure.Repositories
         {
 
         }
+
+        IQueryable<Spending> ISpendingRepository.GetAllSpendingWithAppUserAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

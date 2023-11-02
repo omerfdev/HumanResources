@@ -15,7 +15,7 @@ namespace Application.Services.CompanyService
         Task AddCompanyAsync(AddCompanyDTO addcompanyDTO);
         Task<List<Company>> GetCompanyAsync();
         Task<List<Company>> GetCompanyAsync(Expression<Func<Company, bool>> predicate, params Expression<Func<Company, object>>[] includes);
-        Task<Company> UpdateCompanyAsync(Company updateCompany);
+        Task<int> UpdateCompanyAsync(Company updateCompany);
         Task<int> DeleteCompanyAsync(int id);
     }
 }

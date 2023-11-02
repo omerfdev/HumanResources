@@ -9,6 +9,6 @@ namespace Domain.Repositories
 {
     public interface ISpendingRepository : IBaseRepository<Spending>
     {
-
+        IQueryable<Spending> GetAllSpendingWithAppUserAsync();
     }
 }

@@ -48,9 +48,14 @@ namespace Application.Services.CompanyService
             return await companyRepository.GetAllAsync(c => c.IsActive == true, c => c.Addresses);
         }
 
-        public async Task<Company> UpdateCompanyAsync(Company updateCompany)
+        public async Task<int> UpdateCompanyAsync(Company updateCompany)
         {
             return await companyRepository.UpdateAsync(updateCompany);
+        }
+
+        Task<Company> ICompanyService.GetCompanyAsync(int companyId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

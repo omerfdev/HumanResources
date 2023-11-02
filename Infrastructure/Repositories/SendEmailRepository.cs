@@ -10,16 +10,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class DayOffRepository:BaseRepository<DayOff>,IDayOffRepository
+    public class SendEmailRepository : BaseRepository<SendEmail>, ISendEmailRepository
     {
-        public DayOffRepository(Context context) : base(context)
+        public SendEmailRepository(Context context) : base(context)
         {
-
-        }
-
-        public IQueryable<DayOff> GetUserWithRequestsAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Domain.Repositories
         Task<int> DeactivateAsync(int id);
         Task<int> ActivateAsync(int id);
         Task<T> GetByNameAsync(string name);
+       
     }
 }
 

@@ -29,6 +29,7 @@ namespace HrELP.Infrastructure
         public DbSet<DayOffType>? DayOffTypes { get; set; }
         public DbSet<DayOffAppUser>? DayOffAppUsers { get; set; }
         public DbSet<Department>? Departments { get; set; }
+        public DbSet<SendEmail>? SendEmails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -52,6 +53,7 @@ namespace HrELP.Infrastructure
             builder.ApplyConfiguration<DayOff>(new DayOffCFG());
             builder.ApplyConfiguration<DayOffType>(new DayOffTypeCFG());
             builder.ApplyConfiguration<DayOffAppUser>(new DayOffAppUserCFG());
+            builder.ApplyConfiguration<SendEmail>(new SendEmailCFG());
 
             
 
