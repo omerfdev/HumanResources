@@ -9,6 +9,6 @@ namespace Application.Services.AddressService
 {
     public interface IAddressService
     {
-        Task<Address> GetUserAddressAsync();
+        Task<Address> GetUserAddressAsync(int userId);
     }
 }

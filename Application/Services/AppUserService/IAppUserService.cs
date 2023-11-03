@@ -12,18 +12,18 @@ namespace Application.Services.AppUserService
 {
     public interface IAppUserService
     {
-        Task Logout();
+        Task LogoutAsync();
         Task<SignInResult> LoginAsync(AppUserLoginDTO appUserLoginDTO);
-        Task<bool> IsEmailInUser(string email);
-        Task<AppUser> GetUserWithIdentityAsync(string identity);
-        Task<AppUser> GetRequestsWithUserAndCompanyAsync(int id);
-        Task<AppUser> GetUserAsync(int id);        
+        Task<AppUser> GetUserWithCitizenIdAsync(string citizenId);
+        Task<List<AppUser>> GetDayOffRequestsWithUserAsync(int id);
+        Task<AppUser> GetUserAsync(int id);
         Task<AppUser> GetUserWithEmailAsync(ForgetPasswordVM forgetPasswordVM);
         Task<AppUser> GetUserWithEmailAsync(CreatePasswordVM createPasswordVM);
-        Task<List<AppUser>> GetAllUsersByCompanyIdAsync(int companyId);
-        Task<List<AppUser>> GetAllUsersByEmailAsync(string email);
+        Task<List<AppUser>> GetAllActiveUsersByCompanyIdAsync(int companyId);
+        Task<List<AppUser>> GetAllPassiveUsersByCompanyIdAsync(int companyId);
+        Task<AppUser> GetUserByEmailAsync(string email);
         Task<int> AddEmployeeAsync(AddEmployeeDTO addemployeeDTO);
-        Task<int> UpdateEmployeeAsync(UpdateEmployeeDTO updateemployeeDTO);      
+        Task<int> UpdateEmployeeAsync(UpdateEmployeeDTO updateemployeeDTO);
 
 
     }

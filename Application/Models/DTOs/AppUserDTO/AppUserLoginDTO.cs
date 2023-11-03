@@ -10,7 +10,7 @@ namespace Application.Models.DTOs.AppUserDTO
     public class AppUserLoginDTO
     {
         [Required]
-        public string Username { get; set;}
+        public string Email { get; set;}
         [Required]
         public string Password { get; set;}
     }

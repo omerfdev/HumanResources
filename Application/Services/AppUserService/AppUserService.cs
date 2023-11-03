@@ -1,6 +1,8 @@
 ﻿using Application.Models.DTOs.AppUserDTO;
 using Application.Models.VMs.AppUserDTO;
+using AutoMapper;
 using Domain.Entities.Concrete;
+using Domain.Repositories;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,29 +14,45 @@ namespace Application.Services.AppUserService
 {
     public class AppUserService : IAppUserService
     {
-        public Task<int> AddEmployeeAsync(AddEmployeeDTO addemployeeDTO)
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IAppUserRepository _userRepository;
+        private readonly IMapper _mapper;
+
+        public AppUserService(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IAppUserRepository userRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _signInManager = signInManager;
+            _userManager = userManager;
+            _userRepository = userRepository;
+            _mapper = mapper;
+        }
+        public async Task<int> AddEmployeeAsync(AddEmployeeDTO addemployeeDTO)
+        {
+            
         }
 
-        public Task<List<AppUser>> GetAllUsersByCompanyIdAsync(int companyId)
+        public async Task<List<AppUser>> GetAllActiveUsersByCompanyIdAsync(int companyId)
         {
-            throw new NotImplementedException();
+            return _userRepository.GetAll().Where(x => x.IsActive == true && x.CompanyId == companyId).ToList();
+        }
+        public async Task<List<AppUser>> GetAllPassiveUsersByCompanyIdAsync(int companyId)
+        {
+            return _userRepository.GetAll().Where(x => x.IsActive == false && x.CompanyId == companyId).ToList();
         }
 
-        public Task<List<AppUser>> GetAllUsersByEmailAsync(string email)
+        public async Task<List<AppUser>> GetDayOffRequestsWithUserAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetAllAsync(x => x.DayOffAppUser.AppUserId == id);
         }
 
-        public Task<AppUser> GetRequestsWithUserAndCompanyAsync(int id)
+        public async Task<AppUser> GetUserAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetByIdAsync(id);
         }
 
-        public Task<AppUser> GetUserAsync(int id)
+        public async Task<AppUser> GetUserByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetFirstOrDefaultAsync(x => x.Email == email);
         }
 
         public Task<AppUser> GetUserWithEmailAsync(ForgetPasswordVM forgetPasswordVM)
@@ -47,29 +65,28 @@ namespace Application.Services.AppUserService
             throw new NotImplementedException();
         }
 
-        public Task<AppUser> GetUserWithIdentityAsync(string identity)
+        public async Task<AppUser> GetUserWithCitizenIdAsync(string citizenId)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetFirstOrDefaultAsync(x => x.CitizenId == citizenId);
         }
 
-        public Task<bool> IsEmailInUser(string email)
+        public async Task<SignInResult> LoginAsync(AppUserLoginDTO appUserLoginDTO)
         {
-            throw new NotImplementedException();
+            AppUser user = await _userRepository.GetFirstOrDefaultAsync(x => x.Email == appUserLoginDTO.Email);
+            await _signInManager.SignOutAsync();
+            return await _signInManager.PasswordSignInAsync(user, appUserLoginDTO.Password, false, false);
         }
 
-        public Task<SignInResult> LoginAsync(AppUserLoginDTO appUserLoginDTO)
+        public async Task LogoutAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Logout()
-        {
-            throw new NotImplementedException();
+            await _signInManager.SignOutAsync();
         }
 
         public Task<int> UpdateEmployeeAsync(UpdateEmployeeDTO updateemployeeDTO)
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

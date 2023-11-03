@@ -9,7 +9,7 @@ namespace Application.Services.SendEmailService
     public class SendEmailService : ISendEmailService
     {
        
-        public async Task<bool>  SendConfirmationEmailAsync(string mailTO, EmailType emailType, string TemplateFolder, string htmlName, AppUser user,Status status, string confirmationLink)
+        public async Task SendConfirmationEmailAsync(string mailTO, EmailType emailType, string TemplateFolder, string htmlName, AppUser user,Status status, string confirmationLink)
         {
             string _IWebHostEnvironment = "_IWebHostEnvironment.WebRootPath";
             string HtmlBody = "";

@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Concrete;
+using Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,16 @@ namespace Application.Services.AddressService
 {
     public class AddressService : IAddressService
     {
-        public Task<Address> GetUserAddressAsync()
+        private readonly IAddressRepository _addressRepository;
+
+        public AddressService(IAddressRepository addressRepository)
         {
-            throw new NotImplementedException();
+            _addressRepository = addressRepository;
+        }
+
+        public async Task<Address> GetUserAddressAsync(int userId)
+        {
+           return await _addressRepository.GetByIdAsync(userId);
         }
     }
 }

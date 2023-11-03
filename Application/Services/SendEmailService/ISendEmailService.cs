@@ -15,18 +15,20 @@ namespace Application.Services.SendEmailService
       /// You Must Add Controller Add
       /// 
       ///   private readonly IWebHostEnvironment _IWebHostEnvironment;
-      ///   
+      /// 
+      /// You should look wwwroot foler for EmailTemplate
+      /// 
       /// public XController(IWebHostEnvironment IWebHostEnvironment){_IWebHostEnvironment = IWebHostEnvironment;}
-        /// 
-        /// </summary>     
-        /// <param name="mailTO"></param>
-        /// <param name="emailType"></param>
-        /// <param name="TemplateFolder"></param>
-        /// <param name="htmlName"></param>
-        /// <param name="user"></param>   
-        /// <param name="resetLink"></param>
-        /// <param name="replyDate"></param>
-        /// <returns></returns>
+      /// 
+      /// </summary>     
+      /// <param name="mailTO"></param>
+      /// <param name="emailType"></param>
+      /// <param name="TemplateFolder"></param>
+      /// <param name="htmlName"></param>
+      /// <param name="user"></param>   
+      /// <param name="resetLink"></param>
+      /// <param name="replyDate"></param>
+      /// <returns></returns>
         Task SendForgetPasswordEmailAsync(string mailTO, EmailType emailType, string TemplateFolder, string htmlName, AppUser user, string resetLink, string replyDate);
         /// <summary>
         /// Send Email for Confirmation Link
@@ -36,6 +38,8 @@ namespace Application.Services.SendEmailService
         ///   private readonly IWebHostEnvironment _IWebHostEnvironment;
         ///   
         /// public XController(IWebHostEnvironment IWebHostEnvironment){_IWebHostEnvironment = IWebHostEnvironment;}
+        /// 
+        /// You should look wwwroot foler for EmailTemplate
         /// 
         /// </summary>
          /// <param name="mailTO"></param>
@@ -56,6 +60,8 @@ namespace Application.Services.SendEmailService
         ///   
         /// public XController(IWebHostEnvironment IWebHostEnvironment){_IWebHostEnvironment = IWebHostEnvironment;}
         /// 
+        /// 
+        /// You should look wwwroot foler for EmailTemplate
         /// 
         /// </summary>
         /// <param name="mailTO"></param>

@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Application.Models.DTOs.AppUserDTO;
+using AutoMapper;
+using Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace Application.AutoMapper
     {
         public HumanResourcesMapper()
         {
-                
+            CreateMap<AppUser, AddEmployeeDTO>().ReverseMap();
         }
     }
 }

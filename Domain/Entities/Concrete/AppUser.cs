@@ -32,7 +32,8 @@ namespace Domain.Entities.Concrete
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
         public ICollection<Spending>? Spendings { get; set; }
-        public ICollection<DayOffAppUser>? DayOffAppUser { get; set; }
+        public ICollection<DayOffAppUser>? DayOffAppUsers { get; set; }
+        public DayOffAppUser DayOffAppUser { get; set; }
         public decimal Salary { get; set; }
         public Status Status { get; set; }
         public bool IsActive { get ; set ; }

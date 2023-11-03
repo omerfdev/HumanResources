@@ -15,6 +15,7 @@ namespace Domain.Entities.Concrete
         public string Town { get; set; }
         public string District { get; set; }
         public string Quarter { get; set; }
+        public string FullAddress { get; set; }
         public int PostalCode { get; set; }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
