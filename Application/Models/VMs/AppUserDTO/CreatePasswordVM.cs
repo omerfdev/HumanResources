@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.ExtensionValidations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,8 +12,10 @@ namespace Application.Models.VMs.AppUserDTO
     {
         public int UserId { get; set; }
         [Required]
+        [PasswordValidator]
         public string Password { get; set; }
         [Required]
+        [PasswordValidator]
         public string RePassword { get; set; }
         public string Token { get; set; }
     }

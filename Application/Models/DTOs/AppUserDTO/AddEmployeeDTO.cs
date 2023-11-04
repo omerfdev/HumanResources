@@ -1,8 +1,10 @@
-﻿using Domain.Entities.Concrete;
+﻿using Application.ExtensionValidations;
+using Domain.Entities.Concrete;
 using Domain.Entities.Enum;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,11 @@ namespace Application.Models.DTOs.AppUserDTO
         public IFormFile? Photos { get; set; }
         public string Profession { get; set; }
         public Gender Gender { get; set; }
-        public string BirthPlace { get; set; }       
+        public string BirthPlace { get; set; }
+        [Required(ErrorMessage ="You should give your email adress")]
+        [EmailValidation]
+        public string UserEmail { get; set; }
+        public string TelephoneNumber { get; set; }
         public int AddressId { get; set; }
         public Address Address { get; set; }
         public string SelectedCity { get; set; }
@@ -32,6 +38,8 @@ namespace Application.Models.DTOs.AppUserDTO
         public Company Company { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
+        public int RoleId { get; set; }
+        public AppRole RoleName { get; set; }
         public decimal Salary { get; set; } 
         public DateTime? BirthDate { get; set; }
         public DateTime? HireDate { get; set; } = DateTime.Now;      

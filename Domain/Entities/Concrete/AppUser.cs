@@ -19,6 +19,8 @@ namespace Domain.Entities.Concrete
         public string CitizenId { get; set; }
         public string Photo { get; set; }
         public string Profession { get; set; }      
+        public string UserEmail { get; set; }      
+        public string TelephoneNumber { get; set; }      
         public Gender Gender { get; set; }             
         public string BirthPlace { get; set; }
         public byte NumberOfDayOff { get; set; }

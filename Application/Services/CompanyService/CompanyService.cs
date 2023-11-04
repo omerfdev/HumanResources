@@ -8,7 +8,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Application.Services.CompanyService
 {
@@ -33,16 +32,14 @@ namespace Application.Services.CompanyService
            return await companyRepository.DeactivateAsync(id);
         }
 
-        public async Task<List<Company>> GetCompanyAsync(int companyId)
+        public async Task<List<Company>> GetActiveCompanyAsync()
         {
             return await companyRepository.GetAllAsync(x => x.IsActive == true);
         }
-
-        public Task<List<Company>> GetCompanyAsync()
+        public async Task<Company> GetCompanyAsync(int companyId)
         {
-            throw new NotImplementedException();
+            return await companyRepository.GetByIdAsync(companyId);
         }
-
         public async Task<List<Company>> GetCompanyAsync(Expression<Func<Company, bool>> predicate, params Expression<Func<Company, object>>[] includes)
         {
             return await companyRepository.GetAllAsync(c => c.IsActive == true, c => c.Addresses);
@@ -53,9 +50,6 @@ namespace Application.Services.CompanyService
             return await companyRepository.UpdateAsync(updateCompany);
         }
 
-        Task<Company> ICompanyService.GetCompanyAsync(int companyId)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -12,6 +12,8 @@ namespace Application.Services.AppUserService
 {
     public interface IAppUserService
     {
+        Task<string> CreateEmailAsync(string firstName,string lastName,string companyName);
+        Task<string> ConvertCharAsync(string text);
         Task LogoutAsync();
         Task<SignInResult> LoginAsync(AppUserLoginDTO appUserLoginDTO);
         Task<AppUser> GetUserWithCitizenIdAsync(string citizenId);

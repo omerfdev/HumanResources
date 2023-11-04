@@ -14,6 +14,7 @@ namespace Application.AutoMapper
         public HumanResourcesMapper()
         {
             CreateMap<AppUser, AddEmployeeDTO>().ReverseMap();
+            CreateMap<AppUser, UpdateEmployeeDTO>().ReverseMap();
         }
     }
 }
