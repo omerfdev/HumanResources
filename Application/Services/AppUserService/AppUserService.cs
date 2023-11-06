@@ -38,7 +38,7 @@ namespace Application.Services.AppUserService
             user.NormalizedUserName = user.NormalizedEmail;
             await _userRepository.AddAsync(user);
             //user.AppRoleId = addemployeeDTO.RoleId;
-            // await _userManager.AddToRoleAsync(user,addemployeeDTO.Role);
+            //await _userManager.AddToRoleAsync(user,addemployeeDTO.Role);
             user.AddressId = user.Address.AddressId;
             return await _userRepository.UpdateAsync(user);
         }

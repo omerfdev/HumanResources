@@ -24,11 +24,12 @@ namespace Application.Services.SpendingService
             _appuserRepository = appuserRepository;
         }
 
-        public async Task CreateSpendingRequestAsync(CreateSpendingDTO spendings)
+        public async Task<int> CreateSpendingRequestAsync(AddSpendingDTO spendings)
         {
             Spending spending = new Spending(); 
             _mapper.Map(spendings, spending);
             await _spendingRepository.AddAsync(spending);
+            return await _spendingRepository.UpdateAsync(spending);
         }
 
         public async Task<List<Spending>> GetAllSpendingAsync(int EmployeeId)
@@ -51,9 +52,11 @@ namespace Application.Services.SpendingService
             await _spendingRepository.DeactivateAsync(id);
         }
 
-        public async Task UpdateSpendingAsync(Spending spending)
+        public async Task<int> UpdateSpendingAsync(UpdateSpendingDTO UpdateSpendingDTO)
         {
-           await _spendingRepository.UpdateAsync(spending);
+            Spending spending = await _spendingRepository.GetFirstOrDefaultAsync(x => x.SpendingId == UpdateSpendingDTO.SpendingId);
+            _mapper.Map(spending, UpdateSpendingDTO);
+            return await _spendingRepository.UpdateAsync(spending);
         }
 
         public async Task UploadSpendingDocumentAsync(int spendingId, string documentPath)

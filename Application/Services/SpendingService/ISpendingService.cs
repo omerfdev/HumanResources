@@ -11,8 +11,8 @@ namespace Application.Services.SpendingService
 {
     public interface ISpendingService
     {
-        Task CreateSpendingRequestAsync(CreateSpendingDTO spending);
-        Task UpdateSpendingAsync(Spending spending);       
+        Task<int> CreateSpendingRequestAsync(AddSpendingDTO CreateSpendingDTO);
+        Task<int> UpdateSpendingAsync(UpdateSpendingDTO UpdateSpendingDTO);       
         Task<List<Spending>> GetAllSpendingAsync(int EmployeeId);
         Task<List<Spending>> GetFilteredSpendingAsync(int employeeId, Status Status);
         Task UploadSpendingDocumentAsync(int spendingId, string documentPath);

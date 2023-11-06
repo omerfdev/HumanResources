@@ -1,4 +1,5 @@
 ﻿using Application.Models.DTOs.AppUserDTO;
+using Application.Models.DTOs.SpendingTypeDTO;
 using AutoMapper;
 using Domain.Entities.Concrete;
 using System;
@@ -15,6 +16,8 @@ namespace Application.AutoMapper
         {
             CreateMap<AppUser, AddEmployeeDTO>().ReverseMap();
             CreateMap<AppUser, UpdateEmployeeDTO>().ReverseMap();
+            CreateMap<SpendingType, AddSpendingTypeDTO>().ReverseMap();
+            CreateMap<SpendingType, UpdateSpendingTypeDTO>().ReverseMap();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Application.Models.DTOs.AppUserDTO
         public string Email { get; set; }
         [EmailValidation]
         public string UserEmail { get; set; }
+        [TelephoneNumberValidation]
         public string TelephoneNumber { get; set; }
         public string? Photo { get; set; }
         public IFormFile? Photos { get; set; }

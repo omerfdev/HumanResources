@@ -26,6 +26,7 @@ namespace Application.Models.DTOs.AppUserDTO
         [Required(ErrorMessage ="You should give your email adress")]
         [EmailValidation]
         public string UserEmail { get; set; }
+        [TelephoneNumberValidation]
         public string TelephoneNumber { get; set; }
         public int AddressId { get; set; }
         public Address Address { get; set; }

@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Concrete;
+﻿using Application.Models.DTOs.SpendingTypeDTO;
+using Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace Application.Services.SpendingTypeService
 {
     public interface ISpendingTypeService
     {
-        Task CreateSpendingTypeAsync(SpendingType spendingType);
-        Task UpdateSpendingTypeAsync(SpendingType spendingType);
+        Task<int> CreateSpendingTypeAsync(AddSpendingTypeDTO addSpendingTypeDTO);
+        Task<int> UpdateSpendingTypeAsync(UpdateSpendingTypeDTO updateSpendingTypeDTO);
         Task DeleteSpendingTypeAsync(int spendingTypeId);
         Task<List<SpendingType>> GetAllSpendingTypesAsync();        
         Task<SpendingType> GetSpendingTypeAsync(int spendingTypeId);

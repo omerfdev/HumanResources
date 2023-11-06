@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Concrete;
+﻿using Application.Models.DTOs.DepartmentDTO;
+using Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Application.Services.DepartmentService
 {
     public interface IDepartmentService
     {
-        Task CreateDepartmentAsync(Department department);
-        Task UpdateDepartmentAsync(Department department);
+        Task<int> CreateDepartmentAsync(AddDepartmentDTO AddDepartmentDTO);
+        Task<int> UpdateDepartmentAsync(UpdateDepartmentDTO UpdateDepartmentDTO);
         Task DeleteDepartmentAsync(int departmentId);
         Task<Department> GetDepartmentAsync(int departmentId);
-        Task<List<Department>> GetDepartmentAsync();
+        Task<List<Department>> GetDepartmentWithCompanyAsync(int companyId);
     }
 }

@@ -6,17 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Models.DTOs.CompanyDTO
+namespace Application.Models.DTOs.SpendingTypeDTO
 {
-    public class AddCompanyDTO
+    public class UpdateSpendingTypeDTO
     {
-        public string CompanyName { get; set; }
-        public decimal Budget { get; set; }
-        public int? ManagerId { get; set; }
-        public AppUser? Manager { get; set; }
-        public AppUser? Employee { get; set; }
-        public Status Status { get; set; }
+        public int SpendingTypeId { get; set; }
+        public string SpendingName { get; set; }
+        public decimal MinAmount { get; set; }
+        public decimal MaxAmount { get; set; }
         public bool IsActive { get; set; }
+        public Status Status { get; set; }
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
         public DateTime? DeleteTime { get; set; }
