@@ -20,4 +20,11 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\VMs\CompanyVM\" />
+    <Folder Include="Models\VMs\DepartmentVM\" />
+    <Folder Include="Models\VMs\SpendingTypeVM\" />
+    <Folder Include="Models\VMs\SpendingVM\" />
+  </ItemGroup>
+
 </Project>
