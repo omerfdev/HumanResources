@@ -13,12 +13,23 @@ namespace Application.Models.DTOs.AppUserDTO
 {
     public class AddEmployeeDTO
     {
+        [Required]
+        [LetterValidation]
         public string FirstName { get; set; }
+        
+        [LetterValidation]
         public string SecondName { get; set; }
+        [Required]
+        [LetterValidation]
         public string Surname { get; set; }
+        
+        [LetterValidation]
         public string SecondSurname { get; set; }
+        [NumberValidation]
         public string CitizenId { get; set; }
+        [ImageValidation]
         public string? Photo { get; set; }
+        [ImageValidation]
         public IFormFile? Photos { get; set; }
         public string Profession { get; set; }
         public Gender Gender { get; set; }
@@ -34,6 +45,7 @@ namespace Application.Models.DTOs.AppUserDTO
         public string SelectedTown { get; set; }
         public string SelectedDistrict { get; set; }
         public string? SelectedQuarter { get; set; }
+        [NumberValidation]
         public int PostalCode { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }

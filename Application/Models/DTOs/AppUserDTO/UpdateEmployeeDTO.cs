@@ -22,7 +22,9 @@ namespace Application.Models.DTOs.AppUserDTO
         public string UserEmail { get; set; }
         [TelephoneNumberValidation]
         public string TelephoneNumber { get; set; }
+        [ImageValidation] 
         public string? Photo { get; set; }
+        [ImageValidation]
         public IFormFile? Photos { get; set; }
         public string Profession { get; set; }
         public Gender Gender { get; set; }

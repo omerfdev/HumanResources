@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Concrete;
+﻿using Application.ExtensionValidations;
+using Domain.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,10 @@ namespace Application.Models.DTOs.SpendingDTO
         public List<SpendingType>? SpendingTypes { get; set; }
         public SpendingType SpendingType { get; set; }
         public int EmployeeId { get; set; }
+        [FileValidation]
         public string? DocumentPath { get; set; }
+        [FileValidation]
+        public IFormFile? Document { get; set; }
         public IFormFile? DocumentFile { get; set; }
     }
 }
