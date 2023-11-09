@@ -46,9 +46,9 @@ namespace HrELP.Infrastructure
             builder.ApplyConfiguration<Address>(new AddressCFG());
             builder.ApplyConfiguration<Company>(new CompanyCFG());
             builder.ApplyConfiguration<Spending>(new SpendingCFG());
-            builder.ApplyConfiguration<SpendingType>(new SpendingTypeCFG());
-            builder.ApplyConfiguration<CompanyDepartment>(new CompanyDepartmentCFG());
+            builder.ApplyConfiguration<SpendingType>(new SpendingTypeCFG());            
             builder.ApplyConfiguration<Department>(new DepartmentCFG());
+            builder.ApplyConfiguration<CompanyDepartment>(new CompanyDepartmentCFG());
             builder.ApplyConfiguration<Currency>(new CurrencyCFG());
             builder.ApplyConfiguration<DayOff>(new DayOffCFG());
             builder.ApplyConfiguration<DayOffType>(new DayOffTypeCFG());
