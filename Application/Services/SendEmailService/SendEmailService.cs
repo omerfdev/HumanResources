@@ -31,7 +31,7 @@ namespace Application.Services.SendEmailService
             mail.Subject = emailType.ToString();
             mail.Body = builder.HtmlBody;
             mail.IsBodyHtml = true;
-
+            
             using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
             {
                 ServicePointManager.ServerCertificateValidationCallback = (s, certificate, chain, sslPolicyErrors) => true;

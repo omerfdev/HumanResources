@@ -54,6 +54,7 @@ namespace HrELP.Infrastructure
             builder.ApplyConfiguration<DayOffType>(new DayOffTypeCFG());
             builder.ApplyConfiguration<DayOffAppUser>(new DayOffAppUserCFG());
             builder.ApplyConfiguration<SendEmail>(new SendEmailCFG());
+            builder.ApplyConfiguration<CreatePDF>(new CreatePDFCFG());
 
             
 
