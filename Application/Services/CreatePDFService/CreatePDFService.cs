@@ -52,7 +52,7 @@ namespace Application.Services.CreatePDFService
             builder.HtmlBody = builder.HtmlBody.Replace("{8}",spending.Result.TotalSpending.ToString());
             builder.HtmlBody = builder.HtmlBody.Replace("{9}", spending.Result.DocumentPath);
             builder.HtmlBody = builder.HtmlBody.Replace("{10}",spending.Status.ToString());
-            builder.HtmlBody = builder.HtmlBody.Replace("{11}",user.FirstName + user.Surname);
+            builder.HtmlBody = builder.HtmlBody.Replace("{11}",user.FirstName+" "+user.Surname);
             var document = htmlToPdf.ConvertHtmlString(builder.HtmlBody);
             return document.Save();
         }
