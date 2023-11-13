@@ -25,6 +25,7 @@ namespace Application.Models.DTOs.AppUserDTO
         
         [LetterValidation]
         public string SecondSurname { get; set; }
+        [TurkishIdentityValidation]
         [NumberValidation]
         public string CitizenId { get; set; }
         [ImageValidation]
